@@ -6,24 +6,21 @@
   if(maxtempToday < 30)
   { 
     cat ("brrrrrrrrrr");
-  
-    if(maxtempToday >= 80)
-    { 
-      cat ("enjoy the sunshine");
-    }
   }
-}  
-{  weather= readline("what is the weather today"); 
-     
-   if(weather == "cloudy")
-   {
-     cat ("dont worry about sunglasses");
   
-     if(weather == "not rainy")
-     {
-       cat ("enjoy staying dry");
-     }   
-   }
+  if(maxtempToday >= 80)
+  { 
+    cat ("enjoy the sunshine");
+  }
+  weather= readline("what is the weather today"); 
+  if(weather == "cloudy")
+  {
+    cat ("dont worry about sunglasses");
+  }
+  if(weather == "not rainy")
+  {
+    cat ("enjoy staying dry");
+  }   
 }   
  
  
