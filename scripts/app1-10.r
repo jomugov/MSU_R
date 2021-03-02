@@ -1,28 +1,27 @@
 { rm(list=ls()); options(show.error.messages = TRUE);
      
-     fishage= as.numeric(readline("fish age ?"));
-    fishlocation = readline("fish location (north or south) port?");
-     
-     
-  if ( (fishage >3 && fishage <5) && (fishlocation == "north"))
+  
+  fishLocation = readline("fish location (north or south) port?");
+  fishAge= as.numeric(readline("fish age ?"));
+  
+  if ((fishLocation != "north") && (fishLocation != "south"))
   {
-    cat (" category I");
+    cat ("invalid");
   }
-  else if ((fishage >2 && fishage <6) &&(fishlocation == "south"))
+  else if ( (fishAge >3 && fishAge <5) && (fishLocation == "north"))
+  {
+    cat ("category I");
+  }
+  else if ((fishAge >2 && fishAge <6) &&(fishLocation == "south"))
   {
     cat("category II");
   }
-  else if ((fishage >=5) && (fishlocation =="north"))
+  else if ((fishAge >=5) && (fishLocation =="north"))
   {
     cat("category III");
   }
-  else if ((fishage >=6) && (fishlocation == "south"))
+  else if ((fishAge >=6) && (fishLocation == "south"))
   {
-    cat ("category IV")
+    cat ("category IV");
   }
-  
-    else if ((fishlocation != "north") && fishlocation != "south")
-    {
-      cat ("invalid")
-    }
 }   
