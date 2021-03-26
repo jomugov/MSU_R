@@ -1,3 +1,4 @@
+myToken="yrqMalidtkrLhlOzTtQGRPGoAGpovwpp";
 pythagoras = function(a,b)
 {
   c = (a^2 + b^2)^(1/2);
@@ -7,13 +8,16 @@ counter=function(vector,compareVal,conditionalOp=">")
 {
   countVal=0;
   vecLength=length(vector);
-  for(val in 1:vecLength)
-  {
-    if(!(conditionalOp == "==" ||conditionalOp == ">" ||conditionalOp == "<" ||
-        conditionalOp == ">=" ||conditionalOp == "<=" ||conditionalOp == "!="))
+  
+    for(val in 1:vecLength)
     {
-      cat("sorry invalid condition");
+    if(!(conditionalOp == "==" ||conditionalOp == ">" ||conditionalOp == "<" ||
+           conditionalOp == ">=" ||conditionalOp == "<=" ||conditionalOp == "!="))
+    {
+        cat("sorry invalid condition");
+      break;
     }
+      
     else if (conditionalOp ==">" && vector[val]>compareVal)
     {
       countVal=countVal+1;
@@ -38,6 +42,7 @@ counter=function(vector,compareVal,conditionalOp=">")
     {
       countVal=countVal+1;
     }
+    
   }
 return(countVal)
 }
