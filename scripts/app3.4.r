@@ -2,6 +2,7 @@
   rm(list=ls()); options(show.error.locations = TRUE);
   lansJanTempsDF=read.csv(file="data/lansingJanTemps.csv");
   lansJanTemps=as.matrix(x=lansJanTempsDF);
+  library(package=ggplot2);
   
   tTest1=t.test(x=lansJanTemps[,4],y=lansJanTemps[,1]);
   tTest2=t.test(x=lansJanTemps[,4],y=lansJanTemps[,2]);
@@ -28,9 +29,27 @@
           ylab= "Temperature(Farhnheit");
   JanAnovaAll=aov(formula = JanTempsAll~JanYearsAll,data=JanYearAllDF);
   print(summary(JanAnovaAll));
-  
+
   hist(residuals(JanAnovaAll)); #residuals express a normal distribution
   #implying that normality assumptions were not violated
-  
+ 
   write.csv(JanYearAllDF,"data/JanTempDF.csv");
+  
+  ####
+  # Added by Charlie:
+  # GGPlots that do the same thing as the R base plots
+  # as.character so GGPlot does not treat year as a continuous numeric value
+  plot1 = ggplot(data=JanYearAllDF) +
+    geom_boxplot(mapping=aes(x=as.character(JanYearsAll), y=JanTempsAll)) +
+    labs(title="January 2011 to January 2016",
+         x = "Years",
+         y = "Temperature (Fahrenheit)") +
+    theme_bw();
+  plot(plot1);
+  
+  plot2 = ggplot() +
+          geom_histogram(mapping=aes(x=JanAnovaAll$residuals)) + 
+          theme_bw();
+  plot(plot2);
+
 }
