@@ -59,17 +59,29 @@
   sdWindMarch=sd(lansWindMat[,"March"],na.rm=TRUE);
   varWindMarch=var(lansWindMat[,"March"],na.rm=TRUE);
   
-  monthlyMean=c()
+  monthlyMean=c();
+  highestMonthlyMean=c();
   for(i in 2:5)
   {
     monthlyMean[i]=mean(lansWindMat[ ,i],na.rm=TRUE);
+    highestMonthlyMean=max(monthlyMean, na.rm=TRUE);
   }
+    cat("The  highest monthly average wind speed is", highestMonthlyMean, "which 
+        was February");
   
-  dailyMaxAvgWind=c()
+  dailyMaxAvgWind=c();
+  maxWind=0;
+  maxDay=1;
   for(x in 1:31)
   {
-    dailyMaxAvgWind[x]=max(lansWindMat[ ,x],na.rm=TRUE);
+    dailyMaxAvgWind[x]=max(lansWindMat[ x,],na.rm=TRUE);
+    
+    if (dailyMaxAvgWind[x] > maxWind)
+    {
+       maxWind=dailyMaxAvgWind[x]
+       maxDay=x
+    }
   }
+    print("the maximum wind speed was", maxWind);
+    print("the maximum wind speed was measured on", maxDay);
 }
-##I'd like to use if and cat to relay the maximum monthly and daily means in the 
-#console
