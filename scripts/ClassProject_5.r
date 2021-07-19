@@ -11,7 +11,7 @@
   library(reshape2);
   library(dplyr);
   
-  esidata = dcast(data = esi, formula =  "esi" ~ country ,  value.var = "esi");
+  esidata = dcast(data = esi, formula =  "esi" ~ country ,  value.var = "esi");#skill 41
   # reshaped data frame just to show esi data in a different format
   colnames(x=esidata)[1]="";#skill 45
   rownames(x=esidata)[1]="Env Index";#skill 45
@@ -125,8 +125,8 @@
   
   violentList= list("Random"=randomViolent, "Normal"= normalDistribution, 
                     "Seed"=seedSample);
-  save(violentList, file="data/violentList.rdata");
+  save(violentList, file="data/violentList.rdata");#skill65
   load("data/violentList.rdata");
-  randomViolentList=violentList[["Random"]];
+  randomViolentList=violentList[["Random"]];#skill 55
   
 }
