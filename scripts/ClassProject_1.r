@@ -1,7 +1,5 @@
 {
   rm(list=ls()); options(show.error.messages = TRUE);
-  setwd = ("C:/users/jmutchler/OneDrive-DOE/MSU_R");
-  
   a=(5+8)/(4^2); #Skill 1,2,3
   fishType=readline("What type of fish is your favorite to catch?");#Skill 4
   fish1=readline("How long was your biggest fish (inches)?");
@@ -12,37 +10,31 @@
   cat("Your favorite fish to catch is", fishType, "\nYour biggest fish caught was"
   ,fish1, "inches \nYour second biggest fish caught was", fish2,"inches"); #SKILL 5,6
   
-  if(fishType != "Steelhead") #Skill 7
+  if(fishType == "Steelhead") #Skill 7  ## if fishType is Steelhead the cat() response is given
   {
-    cat("\nSteelhead are my favorite fish to catch");
+    cat("\nSteelhead are my favorite fish to catch")
   }
-  else if (fishType == "Walleye") #Skill 7,8,9
+  else
   {
-    cat("\nWalleye are fun to catch");
+    cat("\nAll fish lives matter");#skill 10 ## else can act like an error condition if fishtype is not steelhead 
   }
-  else #Skill 10
+  if (fishType != "Walleye") #Skill 7 ## use of conditional operator
   {
-    cat("I haven't heard of that kind of fish");
+    cat("\nHave you tried fishing Walleye?");
   }
-  if(fish1 <= 27) #skill 7
+  
+  if(fish1 <= 27) #skill 7 ## use of conditional operator
   {
     cat("\nnice fish bud");
   }
-  if (fish2 > 28) #skill 7
+  if (fish1 >=30 || fish2 >30 && fishType == "Steelhead") #Skill 7,11,12, 13 ## if fish1 or fish2 meet the condition and the fish type is steelhead
   {
-    cat("\nNot your biggest catch but still a nice fish");
+    cat("\nThat's the fish I've been dreaming of\nAre you sure the fish was that big?"); 
   }
-  if (fish1 >=30 && fishType == "Steelhead") #Skill 13
+  else if (fish1 < 26) #skill 7,9 ##use of else if and conditional operator
   {
-    cat("\nThat's the fish I've been dreaming of"); #Skill 11
+    cat("\nYou can catch bigger fish than that");
   }
-  if (fish1 < 26) #skill 7
-  {
-    cat("\nthat beats my personal best");
-  }
-  if (fish1 >=30 || fish2 >=30) #skill 7,12
-  {
-    cat("\nAre you sure the fish was that big?");
-  }
+ 
 }
 
