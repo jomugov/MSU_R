@@ -9,12 +9,12 @@
   alIncome=alCrimeAll$income;
   alPopulation=alCrimeAll$population;
   plot(formula=alCrimeViolent~alIncome);
-  model1=lm(formula=alCrimeViolent~alIncome);#skill 56
+  model1=lm(formula=alCrimeViolent~alIncome);
   abline(model1 , col="blue");# skill 57
   print(summary(model1));
   #
   plot(formula=alCrimeViolent~alPopulation);
-  model2=lm(formula=alCrimeViolent~alPopulation);#skill 56
+  model2=lm(formula=alCrimeViolent~alPopulation);
   abline(model2, col="blue");
   print(summary(model2));
   alAverageIncome = mean(alIncome);

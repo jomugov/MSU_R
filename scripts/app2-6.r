@@ -14,10 +14,7 @@
   weatherData[,"changeInTemp"]=changeInTemp;
   weatherData=weatherData[,c(1,3,6,2,5,4)];
   weatherDataA=weatherData[,c(1,3,6,2,5)];##created to avoid overwrite
-  weatherDataHighTemp=weatherData;
-  weatherDataHighTemp[,"highTemp"]=highTemp;## necessary?
-  weatherDataHighTemp=weatherDataHighTemp[,c(1,4)];
-  ## i cant isolate "highTemp" 
-  ##into a seperate dataframe "weatherDataHighTemp" so i added date column ,Why?
-  write.csv(x=weatherDataHighTemp, file="data/lansingWeatherHightTemp.csv");
+  
+  write.csv(x=weatherDataA, file="data/weatherDataA.csv");
+  ## corrected 3/18
 }

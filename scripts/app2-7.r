@@ -8,10 +8,12 @@
   humidData=weatherData[ ,"humidity"];
   changeInTemp=c()
   lengthVector=length(lowTempData)
+  
   for(i in 1:lengthVector)
   {
     changeInTemp[i]=highTempData[i]-lowTempData[i]
   }
+  
   plot(x=precipData, y=humidData, type = "p",ylim=c(30,80),
        main="Humidity Vs.Precipitation",xlab= "precipitation (in) ",
        ylab= "humidity (%)",col="red");

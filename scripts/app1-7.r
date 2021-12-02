@@ -20,7 +20,8 @@
   if(weather == "not rainy")
   {
     cat ("enjoy staying dry");
-  }   
+  } 
+  fishLength=fishData$Total_Length_mm
 }   
  
  

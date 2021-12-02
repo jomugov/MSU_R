@@ -45,16 +45,19 @@
    
     weatherData = read.csv("data/LansingWeather2.csv", na.strings=c("", " ", 
     "NULL", NULL, "NA", "na", NA, "null"));
-    highTemp=weatherData[ ,2];
-    vectorlength=length(highTemp);
+    highTemp=weatherData$highTemp;
+    vectorlength=length(highTemp); 
+  deltaHighTemp=c()
     differenceInTemp=function(i)
     {
-      changeinHighTemp = c()
-      for ( i in 1:length(highTemp))
+      
+      for ( i in 2:length(highTemp))
+        
       {
-      changeinHighTemp[i] = highTemp[i]-highTemp[i-1];
+      deltaHighTemp[i] = highTemp[i]-highTemp[i-1]
       }
-    return(changeinHighTemp);
+    
+    return(deltaHighTemp);
     }
-    deltatemp=differenceInTemp(i)
+  difference=deltaHighTemp
 }
